@@ -18,4 +18,8 @@ main.o: main.cpp Painting.h
 	$(CC) $(CFLAGS) main.cpp
 
 clean:
-	\rm *.o *~ PaintingManager
+	\rm *.o PaintingManager
+
+
+
+
