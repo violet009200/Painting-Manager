@@ -6,6 +6,11 @@ PaintingWrapper::PaintingWrapper(int id_)
 	:id(id_), pPainting(NULL);
 	{}
 
+PaintingWrapper::~PaintingWrapper(){
+	delete pPainting;
+	cout<<"~PaintingWrapper"<<endl;
+}
+
 Painting* PaintingWrapper::operator->(){
 	if(pPainting == NULL) 
 		//pPainting = cache.loadFromFile(...);
