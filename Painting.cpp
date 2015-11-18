@@ -23,15 +23,13 @@ string Painting::getArtist(){
 }
 
 
-//not in linkedlist
 void Painting::printPainting(){
-	//cout<<"Painting Information"<<endl;
+
 	cout<<"-------------------------------"<<endl;
 	cout<<Painting::pId<<endl<<Painting::pTitle<<endl;
 	cout<<Painting::pArtist<<endl;
 	cout<<"-------------------------------"<<endl;
 	cout<<endl;
-	//p->unloadMemory(pId);
 
 }
 
@@ -40,7 +38,7 @@ void Painting::loadMemory(int id_, string title_, string artist_){
 	Painting::pTitle = title_;
 	Painting::pArtist = artist_;
 	
-	//p->addNode(id_,title_,artist_);
+
 	Painting::addNode(id_,title_,artist_);
 }
 
@@ -128,5 +126,5 @@ void Painting::displayPainting(){
 	}
 	cout<<endl;
 
-	//Painting::deleteNode(list->id);
+
 }

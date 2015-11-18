@@ -3,8 +3,6 @@
 #include "PaintingWrapper.h"
 //class for smart pointer for Painting
 
-//inline PaintingWrapper::PaintingWrapper(Painting* p)
-//			:pPainting(NULL){pPainting = p;}
 PaintingWrapper::PaintingWrapper(Painting* p = NULL){
 	pPainting = p;
 }

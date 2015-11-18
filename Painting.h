@@ -6,14 +6,14 @@ using namespace std;
 
 class Painting{
 	public:
-		//Painting();
+		
 		Painting(int);
-		//Painting(int, string, string);
+		
 		void changeTitle(string );
 		void changeArtist(string);
 		void printPainting();
 		void loadMemory(int, string , string);
-		//void printList();
+		
 
 		void displayPainting();
 

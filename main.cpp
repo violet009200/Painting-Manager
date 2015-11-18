@@ -77,6 +77,8 @@ int main(){
 	PaintingWrapper myPainting4(new Painting(4));
 	PaintingWrapper myPainting5(new Painting(5));
 	
+
+	cout<<"<<<<<<<<<<<<<Painting Manager>>>>>>>>>>>>>>"<<endl;
 	char cmd = printInstruction();
 
 
@@ -141,6 +143,7 @@ int main(){
 		string newArtist;
 		cin>>cmd;
 		cout<<"user input is: "<<cmd<<endl;
+		//Edit Title
 		if(cmd == 't'){
 			switch(curId){
 				case 1:
@@ -155,7 +158,7 @@ int main(){
 					//TODO:
 					//getline(cin,newTitle);
 					cin>>newTitle;
-					//cout<<"newTitle is : "<< newTitle<<endl;
+				
 					myPainting1->changeTitle(newTitle);
 					cout<<"after changing"<<endl;
 					myPainting1->printPainting();
@@ -217,8 +220,10 @@ int main(){
 					break;
 			}//switch
 			
-			//cmd = printInstruction();
+			
 		}
+
+		//Edit Artist Name
 		else if(cmd =='a'){
 			switch(curId){
 				case 1:
@@ -296,6 +301,7 @@ int main(){
 		cmd = printInstruction();
 	}
 	
+	//delete current text file and create new text file then save info
 	else if(cmd == 's'){
 		cout<<"save all Painting"<<endl;
 		string title;
@@ -320,6 +326,8 @@ int main(){
 		title = myPainting5->getTitle();
 		name = myPainting5->getArtist();
 		writeFile("painting5.txt", 5, title, name);
+
+		cout<<"All files are saved"<<endl;
 
 		myPainting1->unloadMemory(1);
 		myPainting2->unloadMemory(2);
