@@ -1,24 +1,27 @@
 //smart pointer class
 
-#include <PaintingWrapper.h>
+#include "PaintingWrapper.h"
+//class for smart pointer for Painting
 
-PaintingWrapper::PaintingWrapper(int id_)
-	:id(id_), pPainting(NULL);
-	{}
+//inline PaintingWrapper::PaintingWrapper(Painting* p)
+//			:pPainting(NULL){pPainting = p;}
+PaintingWrapper::PaintingWrapper(Painting* p = NULL){
+	pPainting = p;
+}
 
 PaintingWrapper::~PaintingWrapper(){
-	delete pPainting;
-	cout<<"~PaintingWrapper"<<endl;
-}
+			delete pPainting;
+			cout<<"~PaintingWrapper"<<endl;
+		}
 
-Painting* PaintingWrapper::operator->(){
-	if(pPainting == NULL) 
-		//pPainting = cache.loadFromFile(...);
-	return pPainting;
-}
+		//send message to the Person obj
+Painting* PaintingWrapper::operator->() const{
+			return pPainting;
+		}
+		//obtain a reference to the Person obj
+Painting& PaintingWrapper::operator*() const{
+			return *pPainting;
+		}
 
-Painting& PaintingWrapper::operator*(){
-	if(pPainting == NULL)
-		//pPainting = cache.loadFrom..;
-	return *pPainting;
-}
+
+

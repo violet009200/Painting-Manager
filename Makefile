@@ -1,6 +1,6 @@
 
 
-OBJS = Painting.o main.o
+OBJS = PaintingWrapper.o Painting.o main.o
 
 
 CC = g++
@@ -11,10 +11,13 @@ LFLAGS = -Wall $(DEBUG)
 PaintingManager: $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o PaintingManager
 
+PaintingWrapper.o:PaintingWrapper.cpp PaintingWrapper.h
+	$(CC) $(CFLAGS) PaintingWrapper.cpp
+
 Painting.o: Painting.cpp Painting.h
 	$(CC) $(CFLAGS) Painting.cpp
 
-main.o: main.cpp Painting.h
+main.o: main.cpp 
 	$(CC) $(CFLAGS) main.cpp
 
 clean:
